@@ -1,25 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do-List</title>
+
+    <title>To-Do List</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-   <div class="todo-container">
-        <h1>To-Do-List</h1>
 
-        <div class="todo-input">
-            <input type="text" placeholder="Enter a task">
-            <button>Add</button>
+<body>
+
+    <div class="todo-container">
+
+        <!-- Header -->
+        <div class="todo-header">
+
+            <h1>To-Do List</h1>
+
+            <button id="theme-toggle">
+                🌙
+            </button>
+
         </div>
 
-        <ul class="todo-list">
-          
 
+        <!-- Input -->
+        <div class="todo-input">
+
+            <input
+                type="text"
+                placeholder="Enter a task"
+            >
+
+            <button>Add</button>
+
+        </div>
+
+
+        <!-- Search -->
+        <div class="todo-search">
+
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Search tasks..."
+            >
+
+        </div>
+
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <button
+                class="filter-btn active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="active"
+            >
+                Active
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="completed"
+            >
+                Completed
+            </button>
+
+            <button id="clear-completed">
+                Clear Completed
+            </button>
+
+        </div>
+
+
+        <!-- Task List -->
+        <ul class="todo-list">
         </ul>
-   </div> 
-   <script src="script.js"></script>
+
+
+        <!-- Task Counter -->
+        <div class="task-counter">
+
+            <p>
+                Total:
+                <span id="task-count">0</span>
+            </p>
+
+            <p>
+                Active:
+                <span id="active-count">0</span>
+            </p>
+
+            <p>
+                Completed:
+                <span id="completed-count">0</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>

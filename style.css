@@ -1,3 +1,6 @@
+/* ========================================
+   Reset
+======================================== */
 
 * {
     margin: 0;
@@ -5,91 +8,586 @@
     box-sizing: border-box;
 }
 
+
+/* ========================================
+   Body
+======================================== */
+
 body {
     font-family: Arial, sans-serif;
+
     background-color: #f4f4f4;
+
+    color: #333;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
     min-height: 100vh;
+
+    padding: 20px;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s;
 }
 
+
+/* ========================================
+   Todo Container
+======================================== */
+
 .todo-container {
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
+
     background-color: white;
 
     padding: 30px;
-    border-radius: 8px;
 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    transition:
+        background-color 0.3s,
+        box-shadow 0.3s;
 }
+
+
+/* ========================================
+   Header
+======================================== */
+
+.todo-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   Title
+======================================== */
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 0;
 }
+
+
+/* ========================================
+   Theme Button
+======================================== */
+
+#theme-toggle {
+    width: 40px;
+
+    height: 40px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+#theme-toggle:hover {
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   Input Area
+======================================== */
 
 .todo-input {
     display: flex;
+
     gap: 10px;
 }
 
+
+/* ========================================
+   Input
+======================================== */
+
 .todo-input input {
     flex: 1;
-    padding: 10px;
+
+    padding: 12px;
 
     border: 1px solid #ccc;
-    border-radius: 5px;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #333;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        border-color 0.3s;
 }
+
+
+.todo-input input:focus {
+    border-color: #333;
+}
+
+
+/* ========================================
+   Add Button
+======================================== */
 
 .todo-input button {
-    padding: 10px 15px;
+    padding: 12px 18px;
 
     border: none;
-    border-radius: 5px;
+
+    border-radius: 6px;
 
     background-color: #333;
+
     color: white;
 
+    font-size: 16px;
+
     cursor: pointer;
+
+    transition: background-color 0.2s;
 }
+
 
 .todo-input button:hover {
     background-color: #555;
 }
 
+
+/* ========================================
+   Search
+======================================== */
+
+.todo-search {
+    margin-top: 15px;
+}
+
+
+.todo-search input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #333;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition:
+        background-color 0.3s,
+        color 0.3s,
+        border-color 0.3s;
+}
+
+
+.todo-search input:focus {
+    border-color: #333;
+}
+
+
+/* ========================================
+   Filters
+======================================== */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ========================================
+   Filter Buttons
+======================================== */
+
+.filter-btn {
+    padding: 8px 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #333;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.filter-btn:hover {
+    background-color: #f4f4f4;
+}
+
+
+.filter-btn.active {
+    background-color: #333;
+
+    color: white;
+
+    border-color: #333;
+}
+
+
+/* ========================================
+   Clear Completed
+======================================== */
+
+#clear-completed {
+    padding: 8px 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #333;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#clear-completed:hover {
+    background-color: #f4f4f4;
+}
+
+
+/* ========================================
+   Todo List
+======================================== */
+
 .todo-list {
     list-style: none;
-    margin-top: 20px;
+
+    margin-top: 25px;
 }
+
+
+/* ========================================
+   Empty Message
+======================================== */
+
+.todo-list p {
+    text-align: center;
+
+    color: #888;
+
+    padding: 20px 0;
+
+    font-size: 15px;
+}
+
+
+/* ========================================
+   Todo Item
+======================================== */
 
 .todo-list li {
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 
     padding: 12px;
+
     margin-bottom: 10px;
 
     background-color: #f4f4f4;
-    border-radius: 5px;
+
+    border-radius: 6px;
+
+    gap: 8px;
+
+    transition: background-color 0.3s;
 }
 
+
+/* ========================================
+   Task Content
+======================================== */
+
+.task-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* ========================================
+   Task Text
+======================================== */
+
+.task-text {
+    display: block;
+
+    word-break: break-word;
+
+    cursor: default;
+}
+
+
+/* ========================================
+   Task Date
+======================================== */
+
+.task-date {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #888;
+
+    font-size: 12px;
+}
+
+
+/* ========================================
+   Task Checkbox
+======================================== */
+
+.todo-list li input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   Edit / Delete Buttons
+======================================== */
+
 .todo-list li button {
-    padding: 6px 10px;
+    padding: 7px 10px;
 
     border: none;
+
     border-radius: 5px;
 
     background-color: #333;
+
     color: white;
 
     cursor: pointer;
+
+    transition: background-color 0.2s;
 }
+
 
 .todo-list li button:hover {
     background-color: #555;
 }
-```
+
+
+/* ========================================
+   Completed Task
+======================================== */
+
+.completed {
+    text-decoration: line-through;
+
+    opacity: 0.5;
+}
+
+
+/* ========================================
+   Task Counter
+======================================== */
+
+.task-counter {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    margin-top: 20px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+.task-counter p {
+    margin: 0;
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+body.dark {
+    background-color: #181818;
+
+    color: #f5f5f5;
+}
+
+
+body.dark .todo-container {
+    background-color: #242424;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+body.dark #theme-toggle {
+    background-color: #333;
+
+    border-color: #555;
+
+    color: white;
+}
+
+
+body.dark .todo-input input,
+body.dark .todo-search input {
+    background-color: #333;
+
+    border-color: #555;
+
+    color: white;
+}
+
+
+body.dark .todo-input input::placeholder,
+body.dark .todo-search input::placeholder {
+    color: #aaa;
+}
+
+
+body.dark .todo-input input:focus,
+body.dark .todo-search input:focus {
+    border-color: #aaa;
+}
+
+
+body.dark .todo-list li {
+    background-color: #333;
+}
+
+
+body.dark .filter-btn,
+body.dark #clear-completed {
+    background-color: #333;
+
+    border-color: #555;
+
+    color: white;
+}
+
+
+body.dark .filter-btn:hover,
+body.dark #clear-completed:hover {
+    background-color: #444;
+}
+
+
+body.dark .filter-btn.active {
+    background-color: white;
+
+    color: #222;
+
+    border-color: white;
+}
+
+
+body.dark .todo-list p {
+    color: #aaa;
+}
+
+
+body.dark .task-date {
+    color: #aaa;
+}
+
+
+body.dark .task-counter {
+    color: #bbb;
+}
+
+
+/* ========================================
+   Mobile Responsive
+======================================== */
+
+@media (max-width: 500px) {
+
+    .todo-container {
+        padding: 20px;
+    }
+
+
+    .todo-input {
+        flex-direction: column;
+    }
+
+
+    .todo-input button {
+        width: 100%;
+    }
+
+
+    .todo-list li {
+        flex-wrap: wrap;
+    }
+
+
+    .task-counter {
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+}
